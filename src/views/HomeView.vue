@@ -39,4 +39,16 @@ a {
   font-weight: 700;
   text-decoration: none;
 }
+@media (max-width: 600px) {
+  body {
+    font-family: "Roboto", sans-serif;
+    background-image: linear-gradient(
+      to bottom,
+      #f1f1f4 0%,
+      #f1f1f4 16%,
+      white 16%,
+      white 100%
+    );
+  }
+}
 </style>

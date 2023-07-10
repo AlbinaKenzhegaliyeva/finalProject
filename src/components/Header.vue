@@ -13,15 +13,15 @@
     </div>
   </div>
   <div class="respondent">
-    <div class="be_respondent">
+    <div class="respondent__be">
       <p id="apply">Стань нашим респондентом</p>
       <p id="opinion">
         Мы хотим услышать твое мнение, опыт и боли общения с цифровыми
         продуктами Beeline.
       </p>
-      <button id="ready_btn">Я готов!</button>
+      <button id="ready_btn" @click="openInNewTab()">Я готов!</button>
     </div>
-    <div class="opeartor_respondent">
+    <div class="respondent__opeartor">
       <img src="../assets/girl.png" alt="" id="girl" />
     </div>
   </div>
@@ -30,6 +30,11 @@
 <script>
 export default {
   name: "HeaderComp",
+  methods: {
+    openInNewTab() {
+      return this.$store.getters.openLink;
+    },
+  },
 };
 </script>
 
@@ -37,22 +42,22 @@ export default {
 .nav {
   display: flex;
   margin-left: 217px;
+  &__options {
+    margin: 42px 0 0 361px;
+    a {
+      padding-left: 36px;
+    }
+  }
 }
 .logo {
   margin-top: 32px;
 }
-.nav__options {
-  margin: 42px 0 0 361px;
-}
-.nav__options a {
-  padding-left: 36px;
-}
 .respondent {
   display: flex;
   gap: 61.27px;
-}
-.be_respondent {
-  margin: 130px 0 0 217px;
+  &__be {
+    margin: 100px 0 0 217px;
+  }
 }
 #girl {
   width: 647.73px;
@@ -79,5 +84,45 @@ export default {
   text-align: center;
   font-size: 18px;
   font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .nav {
+    margin: 28px 0 0 20px;
+  }
+  .nav__options {
+    display: none;
+  }
+  .logo {
+    margin-top: 0;
+  }
+  .respondent {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    &__be {
+      margin: 0;
+    }
+  }
+  #apply {
+    margin: 48px 81px 0 82px;
+    font-size: 30px;
+    color: var(--light-label-primary, #10083f);
+    text-align: center;
+  }
+  #opinion {
+    margin: 12px 38px 24px 38px;
+    text-align: center;
+  }
+  #ready_btn {
+    height: 48px;
+    font-size: 16px;
+  }
+  #girl {
+    width: 353.57px;
+    height: 234.176px;
+    padding: 59px 21px 0 0.43px;
+  }
 }
 </style>
