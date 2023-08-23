@@ -2,7 +2,7 @@
   <div class="nav">
     <div class="logo">
       <a href="#">
-        <img src="../assets/logo.png" alt="" />
+        <img src="../assets/logo.png" alt="" id="logotip" />
       </a>
     </div>
     <div class="nav__options">
@@ -51,6 +51,9 @@ export default {
 }
 .logo {
   margin-top: 32px;
+}
+#logotip {
+  width: 50px;
 }
 .respondent {
   display: flex;
